@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 import 'package:myfinalprojecthackton/Services/auth_service.dart';
-import 'package:myfinalprojecthackton/Views/login_screen.dart';
+import 'package:myfinalprojecthackton/Views/splash.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +18,7 @@ void main() async {
   );
   
   Get.put(AuthService());
+  //  Get.put(MenuController());
 
   runApp(const MyApp());
 }
@@ -34,7 +36,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.black,
       ),
-      home: LoginScreen(), // Set the initial screen
+      home: SplashScreen(), // Set the initial screen
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myfinalprojecthackton/Background/background.dart';
 import 'package:myfinalprojecthackton/Services/auth_service.dart';
+import 'package:myfinalprojecthackton/Views/Home/home_screen.dart';
 import 'package:myfinalprojecthackton/Views/sign_up.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -114,7 +115,7 @@ class LoginScreen extends StatelessWidget {
                           if (user != null) {
                             Get.snackbar('Success', 'Logged in successfully',
                                 colorText: Color.fromARGB(0, 255, 255, 255));
-                            // Navigate to home screen or dashboard
+                            Get.to(HomeScreen());
                           }
                         },
                         style: ElevatedButton.styleFrom(
