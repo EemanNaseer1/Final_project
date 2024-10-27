@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myfinalprojecthackton/Background/background.dart';
 import 'package:myfinalprojecthackton/Services/auth_service.dart';
-import 'package:myfinalprojecthackton/Views/Home/home_screen.dart';
+// import 'package:myfinalprojecthackton/Views/Home/home_screen.dart';
 import 'package:myfinalprojecthackton/Views/sign_up.dart';
 
 class LoginScreen extends StatelessWidget {
   final AuthService _authService = Get.put(AuthService());
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
+  LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -115,7 +117,7 @@ class LoginScreen extends StatelessWidget {
                           if (user != null) {
                             Get.snackbar('Success', 'Logged in successfully',
                                 colorText: Color.fromARGB(0, 255, 255, 255));
-                            Get.to(HomeScreen());
+                            // Get.to(HomeScreen());
                           }
                         },
                         style: ElevatedButton.styleFrom(

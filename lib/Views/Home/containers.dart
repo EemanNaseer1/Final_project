@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart'; // Import GetX
-import 'package:myfinalprojecthackton/Views/Resturant/resturant_screen.dart';
+import 'package:get/get.dart'; 
+
 
 class Containers extends StatelessWidget {
   final String imagePath;
@@ -82,7 +82,7 @@ class Containers extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       // Use GetX for navigation
-                      Get.to(() => RestaurantScreen());
+                      // Get.to(() => RestaurantScreen());
                     },
                     style: ElevatedButton.styleFrom(
                       elevation: 0,

@@ -1,46 +1,49 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:myfinalprojecthackton/Views/login_screen.dart'; // Import GetX
+import 'package:myfinalprojecthackton/Background/background.dart';
+import 'package:myfinalprojecthackton/Views/login_screen.dart';
 
-class SplashScreen extends StatefulWidget {
-  @override
-  _SplashScreenState createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-
-    // Navigate after a delay
-    Timer(Duration(seconds: 3), () {
-      Get.offAll(LoginScreen()); // Use GetX for navigation
-    });
-  }
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/backgroundImage.png'),
-            fit: BoxFit.cover,
+      body: Background(
+        child: SizedBox(
+          width: double.infinity, // Ensure it stretches horizontally
+          height: double.infinity, // Ensure it stretches vertically
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center, // Center contents
+            children: [
+              // App Logo
+              Image.asset('assets/images/logo.png', height: 150),
+
+              const SizedBox(height: 50),
+
+              // "Get Started" Button
+              ElevatedButton(
+                onPressed: () {
+                  Get.offAll(() => LoginScreen());
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 29, 37, 50),
+                  padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                ),
+                child: const Text(
+                  'Get Started',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
           ),
-        ),
-        child: Column(
-          children: [
-            SizedBox(height: 330),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center, // Center the logo
-              children: [
-                Image.asset('assets/images/logo.png'),
-              ],
-            ),
-          ],
         ),
       ),
     );

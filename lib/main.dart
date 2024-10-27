@@ -9,7 +9,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
   await Firebase.initializeApp(
-    options: FirebaseOptions(
+    options: const FirebaseOptions(
       apiKey: "AIzaSyDT11Hk1BKUCnAhyS-ivOewXfYcwost4pg",
       appId: "1:197936576247:android:e11c61e3b289e238df05f2",
       messagingSenderId: "197936576247",
@@ -18,7 +18,6 @@ void main() async {
   );
   
   Get.put(AuthService());
-  //  Get.put(MenuController());
 
   runApp(const MyApp());
 }
